@@ -1,0 +1,18 @@
+---
+apiVersion: v1
+kind: Service
+metadata: 
+  labels: 
+    app: orclapp
+  name: orcl
+spec: 
+  ports: 
+    - 
+      port: 1521
+      name: lsnr
+    - 
+      port: 5500
+      name: em
+  selector: 
+    app: orclapp
+  type: LoadBalancer
