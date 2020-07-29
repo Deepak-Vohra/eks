@@ -1,0 +1,23 @@
+--- 
+apiVersion: v1
+kind: ReplicationController
+metadata: 
+  labels: 
+    app: hello-world-app
+  name: hello-world-rc
+spec: 
+  replicas: 1
+  selector: 
+    app: hello-world-app
+  template: 
+    metadata: 
+      labels: 
+        app: hello-world-app
+    spec: 
+      containers: 
+        - 
+          image: tutum/hello-world
+          name: hello-world
+          ports: 
+            - 
+              containerPort: 80
