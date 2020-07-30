@@ -1,0 +1,18 @@
+--
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: "hello-world-deployment"
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        name: "hello-world"
+    spec:
+      containers:
+      - image: tutum/hello-world
+        imagePullPolicy: Always
+        name: "hello-world"
+        ports:
+        - containerPort: 80
