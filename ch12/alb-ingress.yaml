@@ -1,0 +1,15 @@
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: "alb-ingress"
+  annotations:
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/subnets: 'subnet-0c7cb0a7877b361a9,subnet-06a8d55dfc0555e06,subnet-0467847bd0475bd76'
+    alb.ingress.kubernetes.io/security-groups: sg-072688381e89c4bd6
+    kubernetes.io/ingress.class: "alb"
+  labels:
+    app: alb-ingress
+spec:
+  rules:
+  - host: kubernetes.nosqlsearch.com
